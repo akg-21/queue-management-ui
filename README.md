@@ -22,7 +22,7 @@ Make sure you have **Node.js** (v18 or higher recommended) and **npm** installed
 
 1. **Navigate to the frontend directory:**
    ```bash
-   cd d:\queue-management\queue-management-ui
+   cd queue-management-ui
    ```
 
 2. **Install dependencies:**
@@ -41,7 +41,7 @@ Make sure you have **Node.js** (v18 or higher recommended) and **npm** installed
 
 > [!IMPORTANT]
 > The Spring Boot backend has CORS configured to explicitly allow requests **only** from the origin `http://localhost:5173`.
-> As defined in [CorsConfig.java](file:///d:/queue-management/queue-management-api/src/main/java/com/queue/queue_management_api/config/CorsConfig.java#L17):
+> As defined in `CorsConfig.java` in the backend API:
 > ```java
 > .allowedOrigins("http://localhost:5173")
 > ```
@@ -56,7 +56,7 @@ server: {
 If port `5173` is busy when launching the app, the server will throw an error instead of using another port, ensuring API requests never fail due to CORS origin violations.
 
 ### API Integration Address
-Axios API requests are dispatched to the backend port `8081` as defined in [api.js](file:///d:/queue-management/queue-management-ui/src/services/api.js):
+Axios API requests are dispatched to the backend port `8081` as defined in `src/services/api.js`:
 ```javascript
 const api = axios.create({
     baseURL: "http://localhost:8081"
